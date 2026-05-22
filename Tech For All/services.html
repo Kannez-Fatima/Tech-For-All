@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechForAll Services</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body{
+      background:#050816;
+      overflow-x:hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .glass{
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 8px 40px rgba(0,0,0,0.35);
+    }
+
+    .blob{
+      position:absolute;
+      border-radius:50%;
+      filter: blur(70px);
+      opacity:.45;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .blob2{
+      animation-delay:2s;
+    }
+
+    .blob3{
+      animation-delay:4s;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px) translateX(0px);
+      }
+      50%{
+        transform:translateY(-40px) translateX(20px);
+      }
+    }
+
+    .service-box{
+      transition:0.5s ease;
+    }
+
+    .service-box:hover{
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .line{
+      width:0%;
+      transition:0.5s;
+    }
+
+    .service-box:hover .line{
+      width:100%;
+    }
+
+    .rotate-text{
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      letter-spacing:4px;
+    }
+  </style>
+</head>
+
+
+<body class="text-white relative min-h-screen">
+
+  <!-- Background Blobs -->
+  <div class="blob bg-cyan-500 w-72 h-72 top-10 left-10"></div>
+  <div class="blob blob2 bg-pink-500 w-72 h-72 bottom-10 right-10"></div>
+  <div class="blob blob3 bg-purple-500 w-60 h-60 top-1/2 left-1/2"></div>
+
+  <!-- Main Section -->
+  <section class="relative z-10 px-6 md:px-16 py-20">
+
+    <!-- Heading -->
+    <div class="text-center mb-20">
+      <h1 class="text-5xl md:text-7xl font-black uppercase tracking-widest">
+        Our Services
+      </h1>
+
+      <p class="text-gray-300 mt-6 max-w-2xl mx-auto text-lg">
+        We create modern digital experiences with creativity,
+        innovation and powerful strategies for your business growth.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="space-y-10">
+
+      <!-- Digital Marketing -->
+      <div class="service-box glass rounded-[35px] overflow-hidden flex flex-col md:flex-row">
+
+        <div class="bg-cyan-500/20 flex items-center justify-center px-5 py-8 md:w-28">
+          <span class="rotate-text text-cyan-300 font-bold text-sm">
+            MARKETING
+          </span>
+        </div>
+
+        <div class="p-8 md:p-12 flex-1">
+          <h2 class="text-3xl font-bold mb-4">
+            Digital Marketing
+          </h2>
+
+          <p class="text-gray-300 leading-8">
+            Boost your online presence with smart marketing strategies,
+            SEO optimization, social media campaigns, branding and
+            audience targeting to grow your business faster.
+          </p>
+
+          <div class="line h-[3px] bg-cyan-400 mt-8 rounded-full"></div>
+        </div>
+
+      </div>
+
+      <!-- Graphic Designing -->
+      <div class="service-box glass rounded-[35px] overflow-hidden flex flex-col md:flex-row">
+
+        <div class="bg-pink-500/20 flex items-center justify-center px-5 py-8 md:w-28">
+          <span class="rotate-text text-pink-300 font-bold text-sm">
+            DESIGNING
+          </span>
+        </div>
+
+        <div class="p-8 md:p-12 flex-1">
+          <h2 class="text-3xl font-bold mb-4">
+            Graphic Designing
+          </h2>
+
+          <p class="text-gray-300 leading-8">
+            Stunning visual designs including logos, social posts,
+            brand identity, UI layouts and creative content that
+            makes your brand stand out professionally.
+          </p>
+
+          <div class="line h-[3px] bg-pink-400 mt-8 rounded-full"></div>
+        </div>
+
+      </div>
+
+      <!-- Web Development -->
+      <div class="service-box glass rounded-[35px] overflow-hidden flex flex-col md:flex-row">
+
+        <div class="bg-purple-500/20 flex items-center justify-center px-5 py-8 md:w-28">
+          <span class="rotate-text text-purple-300 font-bold text-sm">
+            DEVELOPMENT
+          </span>
+        </div>
+
+        <div class="p-8 md:p-12 flex-1">
+          <h2 class="text-3xl font-bold mb-4">
+            Web Development
+          </h2>
+
+          <p class="text-gray-300 leading-8">
+            Responsive and modern websites with advanced animations,
+            optimized performance and premium UI/UX experiences
+            built using latest technologies.
+          </p>
+
+          <div class="line h-[3px] bg-purple-400 mt-8 rounded-full"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="text-center mt-20">
+      <button onclick="toggleText(this)"  class="glass px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 transition duration-500">
+        Explore More
+      </button>
+    </div>
+
+  </section>
+<script>
+    function toggleText(btn){
+  btn.innerText =
+  btn.innerText === "Explore More"
+  ? "Explore Less"
+  : "Explore More";
+}
+</script>
+</body>
+</html>
